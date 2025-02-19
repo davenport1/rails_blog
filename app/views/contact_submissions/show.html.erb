@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @contact_submission %>
+
+<div>
+  <%= link_to "Edit this contact submission", edit_contact_submission_path(@contact_submission) %> |
+  <%= link_to "Back to contact submissions", contact_submissions_path %>
+
+  <%= button_to "Destroy this contact submission", @contact_submission, method: :delete %>
+</div>

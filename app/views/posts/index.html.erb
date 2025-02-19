@@ -1,0 +1,19 @@
+<%# posts/index.html.erb %>
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Posts" %>
+
+<% if authenticated? %>
+  <%= link_to "Create new post", new_post_path %>
+<% end %>
+
+<% if !@posts.any? %>
+  <h1>no posts yet!</h1>
+<% end %>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <%= render post %>
+  <% end %>
+</div>
+

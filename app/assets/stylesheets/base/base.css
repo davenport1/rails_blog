@@ -1,0 +1,112 @@
+/*
+ * Base css file for site wide styles 
+ */
+
+:root {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'JetBrains Mono', monospace;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Make links more visible on dark background */
+a {
+  color: #64B5F6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+nav {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #64B5F6;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #64B5F6;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.button {
+  /* Match link styles */
+  color: #64B5F6;
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  
+  /* Button reset */
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: inherit;
+  
+  /* Ensure proper display */
+  display: inline-block;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+/* Style the form when using button_to to remove default margins */
+form.button_to {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}

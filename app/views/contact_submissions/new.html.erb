@@ -1,0 +1,15 @@
+<% content_for :title, "New contact submission" %>
+
+<h1>lets get in touch!</h1>
+
+<br>
+
+<%= render "form", contact_submission: @contact_submission %>
+
+<br>
+
+<% if authenticated? %>
+  <div>
+    <%= link_to "Back to contact submissions", contact_submissions_path %>
+  </div>
+<% end %> 

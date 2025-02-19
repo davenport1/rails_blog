@@ -1,0 +1,25 @@
+<div id="<%= dom_id post %>" class="post-container <%= 'post-preview' unless local_assigns[:full] %>">
+  <h2 class="post-title"><%= post.title %></h2>
+
+  <div class="post-metadata">
+    <span class="post-category">
+      <%= post.category %>
+    </span>
+
+    <% if post.published_at.present? %>
+      <div>
+        Published <%= post.published_at.to_formatted_s(:long) %>
+      </div>
+    <% end %>
+
+  </div>
+
+  <div class="post-content">
+    <%= local_assigns[:full] ? post.content : post.preview_content %>
+  </div>
+
+  <% unless local_assigns[:full] %>
+    <%= link_to "Read more", post_path(post), class: "button read-more" %>
+  <% end %>
+
+</div>

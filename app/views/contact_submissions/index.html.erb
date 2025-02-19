@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Contact submissions" %>
+
+<h1>Contact submissions</h1>
+
+<div id="contact_submissions">
+  <% @contact_submissions.each do |contact_submission| %>
+    <%= render contact_submission %>
+    <p>
+      <%= link_to "Show this contact submission", contact_submission %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New contact submission", new_contact_submission_path %>

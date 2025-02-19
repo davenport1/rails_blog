@@ -1,0 +1,27 @@
+<% if notice.present? %>
+  <p style="color: green"><%= notice %></p>
+<% end %>
+
+<%= render @post, full: true %>
+
+<div class="post-actions">
+  <div class="post-actions-primary">
+    <%= link_to "Back to posts", @post.category == "technical" ? projects_path : splitboarding_path, class: "button" %>
+    
+    <% if authenticated? %>
+      <span>|</span>
+      <%= link_to "Edit this post", edit_post_path(@post), class: "button" %>
+    <% end %>
+  </div>
+
+  <% if authenticated? %>
+    <div class="post-actions-danger">
+      <%= button_to "Destroy this post",
+                    @post,
+                    method: :delete,
+                    class: "button button-danger",
+                    form: { data: { turbo_confirm: "Are you sure?" } } %>
+    </div>
+  <% end %>
+</div>
+
