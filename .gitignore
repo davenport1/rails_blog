@@ -32,3 +32,8 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore jetbrains files/directories
+.idea
+*.DotSettings
+.idea/*
